@@ -1,66 +1,85 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import image1 from '../project-images/ecommerce-1.png'
-import image2 from '../project-images/ecommerce-2.png'
-import image3 from '../project-images/ecommerce-3.png'
-import image4 from '../project-images/ecommerce-4.png'
-import image5 from '../project-images/ecommerce-5.png'
-import image6 from '../project-images/url-shortner-1.png'
-import image7 from '../project-images/url-shortner-2.png'
-import image8 from '../project-images/url-shortner-3.png'
-import image9 from '../project-images/url-shortner-4.png'
-import image10 from '../project-images/url-shortner-5.png'
-import image11 from '../project-images/url-shortner-6.png'
-import image12 from '../project-images/url-shortner-7.png'
-import image13 from '../project-images/img1.png'
-import image14 from '../project-images/img2.png'
-import image15 from '../project-images/img3.png'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FiGithub,
+  FiExternalLink,
+  FiX,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
+import image1 from "../project-images/ecommerce-1.png";
+import image2 from "../project-images/ecommerce-2.png";
+import image3 from "../project-images/ecommerce-3.png";
+import image4 from "../project-images/ecommerce-4.png";
+import image5 from "../project-images/ecommerce-5.png";
+import image6 from "../project-images/url-shortner-1.png";
+import image7 from "../project-images/url-shortner-2.png";
+import image8 from "../project-images/url-shortner-3.png";
+import image9 from "../project-images/url-shortner-4.png";
+import image10 from "../project-images/url-shortner-5.png";
+import image11 from "../project-images/url-shortner-6.png";
+import image12 from "../project-images/url-shortner-7.png";
+import image13 from "../project-images/img1.png";
+import image14 from "../project-images/img2.png";
+import image15 from "../project-images/img3.png";
+import image16 from "../project-images/Estate1.png";
+import image17 from "../project-images/Estate2.png";
+import image18 from "../project-images/Estate3.png";
+import image19 from "../project-images/Estate4.png";
 const Projects = () => {
   const projects = [
     {
       title: "URL Shortener Web Application",
       github: "https://github.com/pp923014/URL_SHORTNER",
-      description: "Built a fully functional URL shortener that converts long URLs into short, shareable links.",
+      description:
+        "Built a fully functional URL shortener that converts long URLs into short, shareable links.",
       features: [
         "Created a backend using Node.js and Express.js to handle URL shortening, redirection, and analytics",
         "Used Nano ID to create random 7-character short URLs",
-        "Implemented validation logic to ensure custom slugs are unique"
+        "Implemented validation logic to ensure custom slugs are unique",
       ],
       techStack: ["MongoDB", "Express", "React.js", "Node.js", "Tailwind CSS"],
-      images: [
-       image15,image14,image13
-
-      ]
+      images: [image15, image14, image13],
     },
     {
       title: "ShivaFashion - E-Commerce Platform",
       github: "https://github.com/pp923014/E-Commerce",
-      description: "Implemented product search and advanced filtering functionality to enhance user browsing experience.",
+      description:
+        "Implemented product search and advanced filtering functionality to enhance user browsing experience.",
       features: [
         "Designed shopping cart system allowing users to add/remove products",
         "Built admin dashboard for product/order management with JWT authentication",
-        "Integrated multiple payment options including Stripe and Cash on Delivery"
+        "Integrated multiple payment options including Stripe and Cash on Delivery",
       ],
       techStack: ["MongoDB", "Express", "React.js", "Node.js", "Tailwind CSS"],
-      images: [
-         image1,image2,image3,image4,image5
-      ]
+      images: [image1, image2, image3, image4, image5],
     },
     {
       title: "Internship Management Platform",
       github: "https://github.com/pp923014/Internship-Managment-Platform",
-      description: "Built a Platform where users can Apply for internships by submitting their details.",
+      description:
+        "Built a Platform where users can Apply for internships by submitting their details.",
       features: [
         "Enabled admin functionalities to manage internships",
         "Update certificate numbers and edit content sections",
-        "Admin panels for 'What we offer' and 'Available Internships'"
+        "Admin panels for 'What we offer' and 'Available Internships'",
       ],
       techStack: ["MongoDB", "Express", "React.js", "Node.js", "Tailwind CSS"],
-      images: [
-        image12,image6,image7,image8,image9,image10,image11,
-      ]
-    }
+      images: [image12, image6, image7, image8, image9, image10, image11],
+    },
+    {
+      title: "Real Estate Web Application",
+      github: "https://frontend-real-state.vercel.app/",
+      description:
+        "React.js and Tailwind CSS. Users can explore property listings with smooth navigation and clean design. ",
+        features: [
+        "Enabled admin functionalities to manage internships",
+        "Update certificate numbers and edit content sections",
+        "Admin panels for 'What we offer' and 'Available Internships'",
+      ],
+      techStack: ["JavaScript", "React.js", "Tailwind CSS"],
+      images: [image16, image17, image18, image19],
+    },
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -69,22 +88,22 @@ const Projects = () => {
   const openModal = (project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedProject(null);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   const nextImage = () => {
-    setCurrentImageIndex(prev => 
+    setCurrentImageIndex((prev) =>
       prev === selectedProject.images.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex(prev => 
+    setCurrentImageIndex((prev) =>
       prev === 0 ? selectedProject.images.length - 1 : prev - 1
     );
   };
@@ -101,7 +120,10 @@ const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            My <span className="text-indigo-600 dark:text-indigo-400">Projects</span>
+            My{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">
+              Projects
+            </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Some of my recent work and contributions
@@ -192,36 +214,43 @@ const Projects = () => {
 
               {/* Image Slider */}
               <div className="relative h-64 md:h-96 bg-gray-100 dark:bg-gray-700">
-                {selectedProject.images && selectedProject.images.length > 0 && (
-                  <>
-                    <img
-                      src={selectedProject.images[currentImageIndex]}
-                      alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                      className="w-full h-full object-contain"
-                    />
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-                    >
-                      <FiChevronLeft size={24} />
-                    </button>
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-                    >
-                      <FiChevronRight size={24} />
-                    </button>
-                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-                      {selectedProject.images.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentImageIndex(index)}
-                          className={`w-2 h-2 rounded-full ${currentImageIndex === index ? 'bg-white' : 'bg-white bg-opacity-50'}`}
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
+                {selectedProject.images &&
+                  selectedProject.images.length > 0 && (
+                    <>
+                      <img
+                        src={selectedProject.images[currentImageIndex]}
+                        alt={`${selectedProject.title} screenshot ${
+                          currentImageIndex + 1
+                        }`}
+                        className="w-full h-full object-contain"
+                      />
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
+                      >
+                        <FiChevronLeft size={24} />
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
+                      >
+                        <FiChevronRight size={24} />
+                      </button>
+                      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                        {selectedProject.images.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-2 h-2 rounded-full ${
+                              currentImageIndex === index
+                                ? "bg-white"
+                                : "bg-white bg-opacity-50"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
               </div>
 
               {/* Project Details */}
@@ -242,8 +271,12 @@ const Projects = () => {
                   <ul className="space-y-2">
                     {selectedProject.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">•</span>
-                        <span className="text-gray-600 dark:text-gray-400">{feature}</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 mr-2 mt-1">
+                          •
+                        </span>
+                        <span className="text-gray-600 dark:text-gray-400">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
