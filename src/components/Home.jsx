@@ -30,7 +30,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg md:text-xl font-medium text-indigo-600 dark:text-indigo-400 mb-2"
+            className="text-lg md:text-xl font-medium text-indigo-600 dark:text-indigo-400 mb-2 mt-2"
           >
             Hello, I'm
           </motion.p>
@@ -41,7 +41,7 @@ const Home = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            <span className="text-indigo-600 dark:text-indigo-400">
+            <span className="text-indigo-600 dark:text-indigo-400 text-large sm:text-2xl">
               Priyanshu Kumar Pandey
             </span>
           </motion.h1>
