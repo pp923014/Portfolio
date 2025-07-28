@@ -1,26 +1,32 @@
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
-import image from '../assets/img.jpg'
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import Tilt from "react-parallax-tilt";
+import image from "../assets/img.jpg";
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img2.jpeg";
+
 const Home = () => {
-  // Social links data
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/pp923014' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/priyanshukpandey' },
-    { icon: <FaInstagram />, url: 'https://instagram.com/priyanshukpandey' },
-    { icon: <FaEnvelope />, url: 'mailto:06priyanshupandey@gmail.com' },
+    { icon: <FaGithub />, url: "https://github.com/pp923014" },
+    { icon: <FaLinkedin />, url: "https://linkedin.com/in/priyanshukpandey" },
+    { icon: <FaInstagram />, url: "https://instagram.com/priyanshukpandey" },
+    { icon: <FaEnvelope />, url: "mailto:06priyanshupandey@gmail.com" },
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 py-16">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-between bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-16 py-16"
+    >
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Text Content */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="lg:w-1/2 text-center lg:text-left"
         >
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -28,16 +34,18 @@ const Home = () => {
           >
             Hello, I'm
           </motion.p>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            <span className="text-indigo-600 dark:text-indigo-400">Priyanshu Kumar Pandey</span>
+            <span className="text-indigo-600 dark:text-indigo-400">
+              Priyanshu Kumar Pandey
+            </span>
           </motion.h1>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,36 +54,32 @@ const Home = () => {
           >
             Full Stack Developer
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0"
           >
-            I create beautiful, responsive, and user-friendly web applications with modern technologies. Passionate about crafting exceptional digital experiences that make an impact.
+            I create beautiful, responsive, and user-friendly web applications
+            with modern technologies. Passionate about crafting exceptional
+            digital experiences that make an impact.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
             className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
           >
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-indigo-300 dark:hover:shadow-indigo-700"
             >
               View My Work
             </a>
-            {/* <a 
-              href="#contact" 
-              className="px-6 py-3 border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 hover:text-white dark:hover:text-white rounded-lg font-medium transition-all duration-300"
-            >
-              Contact Me
-            </a> */}
           </motion.div>
-          
+
           {/* Social Links */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -98,54 +102,45 @@ const Home = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image with Effects */}
-        <motion.div 
+        {/* Rectangle Image with Powerful Effects */}
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="lg:w-1/2 flex justify-center relative"
         >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-            {/* Gradient background circle */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 blur-xl opacity-20 animate-pulse"></div>
-            
-            {/* Main image container */}
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-              {/* Replace this div with your actual image */}
-              <div className="w-full h-full bg-blue-700 dark:bg-gray-700 flex items-center justify-center">
-                <img src={image} alt="" />
+          <Tilt
+            glareEnable={true}
+            glareMaxOpacity={0.35}
+            scale={1.05}
+            transitionSpeed={1500}
+            className="relative w-72 h-96 sm:w-96 sm:h-[30rem] max-w-full"
+          >
+            {/* Animated gradient background shape */}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="absolute -inset-8 rounded-3xl bg-gradient-to-tr from-indigo-400/30 via-purple-300/20 to-pink-300/40 blur-2xl opacity-40"
+            ></motion.div>
+
+            {/* Main image with glass and shimmer */}
+            <div className="relative w-full h-full overflow-hidden rounded-2xl border-4 border-white dark:border-gray-800 shadow-2xl group">
+              {/* Optional glass overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-indigo-200/5 to-purple-100/10  z-10 pointer-events-none"></div>
+              {/* Image */}
+              <img
+                src={img2}
+                alt="Profile"
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 z-0"
+              />
+              {/* Animated shimmer */}
+              <div className="absolute inset-0 z-20 pointer-events-none">
+                <div className="h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
               </div>
-              
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-full border-2 border-indigo-400/30 pointer-events-none animate-pulse"></div>
+              {/* Animated border glow */}
+              <div className="absolute -inset-1 rounded-2xl border-2 border-indigo-400/40 animate-pulse pointer-events-none"></div>
             </div>
-            
-            {/* Floating elements */}
-            <motion.div
-              animate={{
-                y: [-10, 10, -10],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-indigo-400/10 backdrop-blur-sm border border-indigo-400/20"
-            ></motion.div>
-            
-            <motion.div
-              animate={{
-                y: [10, -10, 10],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="absolute -bottom-8 -right-8 w-20 h-20 rounded-full bg-purple-400/10 backdrop-blur-sm border border-purple-400/20"
-            ></motion.div>
-          </div>
+          </Tilt>
         </motion.div>
       </div>
     </section>
