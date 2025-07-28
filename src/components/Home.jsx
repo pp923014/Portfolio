@@ -39,9 +39,9 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4"
+            className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            <span className="text-indigo-600 dark:text-indigo-400 text-large sm:text-2xl">
+            <span className="text-indigo-600 dark:text-indigo-400">
               Priyanshu Kumar Pandey
             </span>
           </motion.h1>
@@ -59,7 +59,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0"
+            className="text-sm sm:text-base md:text-lg leading-relaxed tracking-normal text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 text-justify"
           >
             I create beautiful, responsive, and user-friendly web applications
             with modern technologies. Passionate about crafting exceptional

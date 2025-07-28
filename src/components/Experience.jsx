@@ -1,8 +1,28 @@
-import { motion } from 'framer-motion';
-import { FaLaptopCode, FaUsers, FaCodeBranch } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaLaptopCode, FaUsers, FaCodeBranch } from "react-icons/fa";
 
 const Experience = () => {
   const experiences = [
+    {
+      role: "Full Stack Web Developer Intern",
+      company: "EDHike",
+      location: "Lucknow, UP",
+      period: "July 2025 – Present",
+      bullets: [
+        {
+          icon: <FaLaptopCode className="text-indigo-500" />,
+          text: "Contributing to the official company website built with the MERN stack. ",
+        },
+        {
+          icon: <FaUsers className="text-indigo-500" />,
+          text: "Refactoring React components and improving overall code quality and maintainability.",
+        },
+        {
+          icon: <FaCodeBranch className="text-indigo-500" />,
+          text: "Worked collaboratively with a team using Git and GitHub",
+        },
+      ],
+    },
     {
       role: "Web Developer Intern",
       company: "Shriprit Educational & IT Hub",
@@ -11,18 +31,18 @@ const Experience = () => {
       bullets: [
         {
           icon: <FaLaptopCode className="text-indigo-500" />,
-          text: "Developed and maintained responsive web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js)"
+          text: "Developed and maintained responsive web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js)",
         },
         {
           icon: <FaUsers className="text-indigo-500" />,
-          text: "Collaborated closely with cross-functional teams to design, implement, and deploy full-stack features, improving user engagement and interface functionality"
+          text: "Collaborated closely with cross-functional teams to design, implement, and deploy full-stack features, improving user engagement and interface functionality",
         },
         {
           icon: <FaCodeBranch className="text-indigo-500" />,
-          text: "Worked collaboratively with a team using Git and GitHub"
-        }
-      ]
-    }
+          text: "Worked collaboratively with a team using Git and GitHub",
+        },
+      ],
+    },
   ];
 
   return (
@@ -37,7 +57,10 @@ const Experience = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            My <span className="text-indigo-600 dark:text-indigo-400">Experience</span>
+            My{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">
+              Experience
+            </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             My professional journey and contributions
@@ -65,7 +88,9 @@ const Experience = () => {
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{exp.role}</h3>
+                    <h3 className="text-[22px] font-bold text-gray-800 dark:text-white">
+                      {exp.role}
+                    </h3>
                     <p className="text-lg text-indigo-600 dark:text-indigo-400">
                       {exp.company} – {exp.location}
                     </p>
@@ -83,7 +108,10 @@ const Experience = () => {
                 {exp.bullets.map((bullet, bulletIndex) => (
                   <motion.div
                     key={bulletIndex}
-                    initial={{ opacity: 0, x: (bulletIndex % 2 === 0) ? -30 : 30 }}
+                    initial={{
+                      opacity: 0,
+                      x: bulletIndex % 2 === 0 ? -30 : 30,
+                    }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 * bulletIndex }}
                     viewport={{ once: true }}
@@ -92,7 +120,9 @@ const Experience = () => {
                     <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mt-1">
                       {bullet.icon}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">{bullet.text}</p>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {bullet.text}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -107,9 +137,7 @@ const Experience = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mt-12"
-        >
-         
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );

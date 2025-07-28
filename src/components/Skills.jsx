@@ -7,13 +7,13 @@ const Skills = () => {
     {
       title: "Languages",
       icon: <FaCode className="text-indigo-600 dark:text-indigo-400 text-2xl" />,
-      skills: ["C++", "JavaScript", "SQL", "C", "Java (Basic)"],
+      skills: ["C++", "JavaScript", "Python", "SQL", "C"],
       color: "bg-indigo-100 dark:bg-indigo-900/30"
     },
     {
       title: "Frameworks/Technologies",
       icon: <FaServer className="text-purple-600 dark:text-purple-400 text-2xl" />,
-      skills: ["Node.js", "Express.js", "React.js", "Tailwind CSS"],
+      skills: ["Node.js", "Express.js", "React.js","Flask", "Tailwind CSS"],
       color: "bg-purple-100 dark:bg-purple-900/30"
     },
     {
