@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center">
               <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                MyPortfolio
+                PK
               </span>
             </a>
           </div>
